@@ -12,7 +12,7 @@ const CLIENT_SECRET = "ED4F0F6453C4EA12BF382DFF12003D8E67608F42ABDB98C0DE9E76C7C
 const USERNAME = "rehatpreet2101-cpke@force.com"; // 👈 Your real login email
 const PASSWORD = "20031975@Reh1YJOc2KlwlGRSxEFfRk2puCq";
 
-const LOGIN_URL = "https://login.salesforce.com/services/oauth2/token";
+const LOGIN_URL = "https://ruby-power-1735.my.salesforce.com/services/oauth2/token";
 
 // API endpoint to create refund request
 app.post("/create-refund", async (req, res) => {
