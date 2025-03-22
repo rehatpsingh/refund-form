@@ -18,7 +18,7 @@ document.getElementById("refundForm").addEventListener("submit", async function 
   };
 
   try {
-    const res = await fetch("https://your-render-app.onrender.com/create-refund", {
+    const res = await fetch("https://salesforce-proxy.onrender.com/create-refund", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
