@@ -9,8 +9,8 @@ app.use(express.json());
 // Replace these with your actual Salesforce connected app credentials
 const CLIENT_ID = "3MVG9ecDCcZXF8nQGQN2xUIqeiK49OjxKw.FzjMUk6YBOdISN4ICAP_8iuBx.YCFB3oGU80eT1ibMgmKHhmNX";
 const CLIENT_SECRET = "ED4F0F6453C4EA12BF382DFF12003D8E67608F42ABDB98C0DE9E76C7C50798EA";
-const USERNAME = "rehatpreet2101-cpke@force.com";
-const PASSWORD = "20031975@RehcY4iukJiHK9EA7gQHIBbaCu0Z";
+const USERNAME = "rehatpreet2101-cpke@force.com"; // 👈 Your real login email
+const PASSWORD = "20031975@Reh1YJOc2KlwlGRSxEFfRk2puCq";
 
 const LOGIN_URL = "https://login.salesforce.com/services/oauth2/token";
 
