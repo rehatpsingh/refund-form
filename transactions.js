@@ -1,6 +1,8 @@
 async function loadTransactions() {
   document.getElementById("status").innerText = "🔄 Loading all transactions...";
 
+  const BACKEND_URL = "https://salesforce-proxy.onrender.com";
+
   try {
     const res = await fetch(`${BACKEND_URL}/transactions`);
     const data = await res.json();
