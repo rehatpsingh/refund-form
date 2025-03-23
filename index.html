@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Submit Refund Request</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Refund Request Form</h2>
-  <form id="refundForm">
 
+  <h2>Submit a Refund Request</h2>
+
+  <form id="refundForm">
     <label>Refund Request Name:</label>
-    <input type="text" id="refundRequestName" required><br><br>
-    
+    <input type="text" id="refundRequestName" required>
+
     <label>Customer (Select Contact):</label>
     <select id="customerId" required>
       <option value="">--Select--</option>
       <option value="003au0000075tr4AAA">Nikitha Dsouza</option>
-      <!-- <option value="003xxxxxxxxxxxx002">John Smith</option>
-      <option value="003xxxxxxxxxxxx003">Emma Brown</option> -->
-    </select><br><br>
+    </select>
 
     <label>Location:</label>
     <select id="location" required>
@@ -27,7 +28,7 @@
       <option value="Winners4">Winners4</option>
       <option value="Winners5">Winners5</option>
       <option value="Winners6">Winners6</option>
-    </select><br><br>
+    </select>
 
     <label>Product Name:</label>
     <select id="productName" required>
@@ -35,13 +36,13 @@
       <option value="Product A">Product A</option>
       <option value="Product B">Product B</option>
       <option value="Product C">Product C</option>
-    </select><br><br>
+    </select>
 
     <label>Refund Amount:</label>
-    <input type="number" id="refundAmount" required><br><br>
+    <input type="number" id="refundAmount" required>
 
     <label>Refund Reason:</label>
-    <textarea id="refundReason" rows="4" required></textarea><br><br>
+    <textarea id="refundReason" rows="4" required></textarea>
 
     <button type="submit">Submit Refund</button>
   </form>
