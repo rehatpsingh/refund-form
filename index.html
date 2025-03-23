@@ -10,39 +10,11 @@
   <h2>Submit a Refund Request</h2>
 
   <form id="refundForm">
-    <label>Refund Request Name:</label>
-    <input type="text" id="refundRequestName" required>
+    <label for="transactionId">Transaction ID:</label>
+    <input type="text" id="transactionId" required><br><br>
 
-    <label>Customer (Select Contact):</label>
-    <select id="customerId" required>
-      <option value="">--Select--</option>
-      <option value="003au0000075tr4AAA">Nikitha Dsouza</option>
-    </select>
-
-    <label>Location:</label>
-    <select id="location" required>
-      <option value="">--Select--</option>
-      <option value="Winners1">Winners1</option>
-      <option value="Winners2">Winners2</option>
-      <option value="Winners3">Winners3</option>
-      <option value="Winners4">Winners4</option>
-      <option value="Winners5">Winners5</option>
-      <option value="Winners6">Winners6</option>
-    </select>
-
-    <label>Product Name:</label>
-    <select id="productName" required>
-      <option value="">--Select--</option>
-      <option value="Product A">Product A</option>
-      <option value="Product B">Product B</option>
-      <option value="Product C">Product C</option>
-    </select>
-
-    <label>Refund Amount:</label>
-    <input type="number" id="refundAmount" required>
-
-    <label>Refund Reason:</label>
-    <textarea id="refundReason" rows="4" required></textarea>
+    <label for="refundReason">Refund Reason:</label>
+    <textarea id="refundReason" rows="4" required></textarea><br><br>
 
     <button type="submit">Submit Refund</button>
   </form>

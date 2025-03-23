@@ -1,32 +1,18 @@
 document.getElementById("refundForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  // 🎯 Collect form data
-  const refundName = document.getElementById("refundRequestName").value.trim();
-  const contactId = document.getElementById("customerId").value;
-  const amount = parseFloat(document.getElementById("refundAmount").value);
+  const transactionId = document.getElementById("transactionId").value.trim();
   const reason = document.getElementById("refundReason").value.trim();
-  const location = document.getElementById("location").value;
-  const product = document.getElementById("productName").value;
 
-  // 🔒 Basic validation
-  if (!refundName || !contactId || !amount || !reason || !location || !product) {
-    document.getElementById("status").innerText = "⚠️ Please fill out all fields.";
+  if (!transactionId || !reason) {
+    document.getElementById("status").innerText = "⚠️ Please fill out both fields.";
     return;
   }
 
-  const payload = {
-    refundName,
-    contactId,
-    amount,
-    reason,
-    location,
-    product
-  };
+  const payload = { transactionId, reason };
 
-  // 🌐 Send to backend
   try {
-    const res = await fetch("https://salesforce-proxy.onrender.com/create-refund", {
+    const res = await fetch("https://salesforce-proxy.onrender.com/request-refund", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -37,12 +23,11 @@ document.getElementById("refundForm").addEventListener("submit", async function 
     if (res.ok && result.id) {
       window.location.href = "thankyou.html";
     } else {
-      document.getElementById("status").innerText = "❌ Failed to create refund. Try again.";
-      console.warn("Refund failed:", result);
+      document.getElementById("status").innerText = "❌ Refund failed.";
+      console.warn("Refund error:", result);
     }
-
   } catch (err) {
-    console.error("Error submitting refund:", err);
-    document.getElementById("status").innerText = "❌ Server error while submitting refund.";
+    console.error("❌ Error:", err);
+    document.getElementById("status").innerText = "❌ Server error. Try again.";
   }
 });
