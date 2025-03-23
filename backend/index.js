@@ -68,17 +68,15 @@ app.post("/create-refund", async (req, res) => {
 });
 
 // ✅ Route 2: Get Transactions for a Contact
+// ✅ Fetch ALL transactions (no filtering by contact)
 app.get("/transactions", async (req, res) => {
-  const { contactId } = req.query;
-
   try {
     const { access_token, instance_url } = await getAccessToken();
 
-    const query = encodeURIComponent(
-      `SELECT Id, Name, Product_Name__c, Amount__c, Location__c, Transaction_Date__c 
-       FROM Transaction__c 
-       WHERE Contact__c = '${contactId}'`
-    );
+    const query = encodeURIComponent(`
+      SELECT Id, Product_Name__c, Amount__c, Location__c, Transaction_Date__c, Contact__c 
+      FROM Transaction__c
+    `);
 
     const txnRes = await fetch(`${instance_url}/services/data/v58.0/query?q=${query}`, {
       headers: { Authorization: `Bearer ${access_token}` }
@@ -86,12 +84,12 @@ app.get("/transactions", async (req, res) => {
 
     const data = await txnRes.json();
     res.json(data.records);
-
   } catch (err) {
-    console.error("Fetch TXNs Error:", err);
+    console.error("❌ Error fetching all transactions:", err);
     res.status(500).json({ error: "Failed to fetch transactions", details: err });
   }
 });
+
 
 // ✅ Route 3: Request Refund from a Transaction
 app.post("/request-refund", async (req, res) => {
