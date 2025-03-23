@@ -6,20 +6,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <img src="logo/Tjxlogo.jpg" alt="TJX Logo" class="logo" />
 
-  <h2>Submit a Refund Request</h2>
+    <h2>Submit a Refund Request</h2>
 
-  <form id="refundForm">
-    <label for="transactionId">Transaction ID:</label>
-    <input type="text" id="transactionId" required><br><br>
+    <form id="refundForm">
+      <label for="transactionId">Transaction ID:</label>
+      <input type="text" id="transactionId" placeholder="e.g. a01au00000AniQLAAZ" required />
 
-    <label for="refundReason">Refund Reason:</label>
-    <textarea id="refundReason" rows="4" required></textarea><br><br>
+      <label for="refundReason">Refund Reason:</label>
+      <textarea id="refundReason" placeholder="Please describe the reason for your refund..." rows="4" required></textarea>
 
-    <button type="submit">Submit Refund</button>
-  </form>
+      <button type="submit">Submit Refund</button>
+    </form>
 
-  <p id="status"></p>
+    <p id="status"></p>
+  </div>
 
   <script src="app.js"></script>
 </body>

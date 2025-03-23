@@ -1,65 +1,95 @@
+/* General Styles */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #f4f6fb;
     padding: 30px;
+    margin: 0;
   }
   
-  h2 {
-    color: #2e6de4;
-    margin-bottom: 20px;
+  .container {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
   }
   
+  /* Logo */
+  .logo {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+  
+  /* Headings */
+  h2 {
+    color: #2e6de4;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Form Elements */
   form {
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.08);
-    max-width: 500px;
-    margin: auto;
+    text-align: left;
   }
   
   label {
     display: block;
     margin-top: 15px;
     font-weight: 600;
+    color: #333;
   }
   
   input,
-  select,
   textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px 12px;
     margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 14px;
     box-sizing: border-box;
   }
   
   textarea {
     resize: vertical;
+    min-height: 100px;
   }
   
-  button {
-    margin-top: 20px;
-    padding: 10px 15px;
+  /* Buttons */
+  button,
+  .button-link {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
     background-color: #2e6de4;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    width: 100%;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
   
-  button:hover {
+  button:hover,
+  .button-link:hover {
     background-color: #1f53b6;
   }
   
-  #status {
+  /* Status & Messages */
+  #status,
+  .message {
     margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-    color: crimson;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .message {
+    color: #222;
   }
   
